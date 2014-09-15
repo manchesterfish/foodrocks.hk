@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing feedbacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Topic</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feedbacks.each do |feedback| %>
+      <tr>
+        <td><%= feedback.email %></td>
+        <td><%= feedback.topic %></td>
+        <td><%= link_to 'Show', feedback %></td>
+        <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Feedback', new_feedback_path %> <br>
+
+<%= link_to 'Check the Dishes', admin_dishes_path %> <br>
+<%= link_to 'Check the Orders', admin_orders_path %> <br>
+<%= link_to 'Goto Menu Page', dishes_path %>

@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   get 'admin/dishes' => 'admin#dishes'
 
   get 'admin/orders' => 'admin#orders'
-  
+
+  get 'admin/feedbacks' => 'admin#feedbacks'
+
   resources :dishes do
     resources :orders , :controller => 'dish_orders'
   end
 
+  resources :feedbacks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
