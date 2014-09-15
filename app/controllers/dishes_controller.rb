@@ -40,6 +40,6 @@ before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:dish_name, :price, :stock, :restaurant, :restaurantURL, :ImageURL)
+      params.require(:dish).permit(:name, :price, :stock, :restaurant, :restaurantURL, :ImageURL)
     end
 end
