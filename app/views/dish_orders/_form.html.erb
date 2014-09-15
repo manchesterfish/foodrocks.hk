@@ -1,0 +1,16 @@
+<%= form_for([@dish, @dish.orders.build]) do |f| %>
+
+  <div class="field">
+    <%= f.hidden_field :dish_id %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "手机号码"%>
+    <%= f.number_field :phone, :class=>'form-control' %>
+  </div>
+
+  <br>
+    <%= f.submit "落单"%>
+  </div>
+
+<% end %>

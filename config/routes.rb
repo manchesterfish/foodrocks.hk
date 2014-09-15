@@ -2,8 +2,13 @@ Rails.application.routes.draw do
 
   root 'dishes#index'
 
-  resources :dishes
+  get 'dishes/admin' => 'dishes#admin'
   
+  resources :dishes do
+    resources :orders , :controller => 'dish_orders'
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

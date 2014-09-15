@@ -4,13 +4,13 @@
   <tbody>
     <tr>
       <% @dishes.each do |dish| %>
-        <td colspan="3"><%= link_to image_tag(dish.ImageURL, size: "200x180"), dish %></td>
+        <td colspan="3"><%= link_to image_tag(dish.imageURL, size: "200x180"), dish %></td>
       <% end %>
     </tr>
     <tr>
       <% @dishes.each do |dish| %>
         <td><%= link_to dish.restaurant, dish.restaurantURL %></td>
-        <td><%= dish.dish_name %></td>
+        <td><%= dish.name %></td>
         <td><%= dish.price %></td>
       <% end %>
     </tr>

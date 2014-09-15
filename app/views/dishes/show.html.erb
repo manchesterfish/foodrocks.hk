@@ -13,4 +13,6 @@
   <%= @dish.price %>
 </p>
 
+<%= render "dish_orders/form", :locals=>{ :order => @dish.orders.build }%>
+
 <%= link_to 'Goto Menu Page', dishes_path %>
