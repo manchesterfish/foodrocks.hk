@@ -20,7 +20,7 @@
 
     respond_to do |format|
         if @order.save
-          format.html { redirect_to dish_orders_url(@dish), notice: 'Order was successfully created.' }
+          format.html { redirect_to dish_order_path(@dish, @order), notice: 'Order was successfully created.' }
         else
           format.html { render "errors" , :locals=>{:order=>@order} }
         end
