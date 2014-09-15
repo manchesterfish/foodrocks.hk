@@ -1,0 +1,23 @@
+<h1>Listing dishes</h1>
+<p> Click on the dish you like to order !</p>
+<table>
+  <tbody>
+    <tr>
+      <% @dishes.each do |dish| %>
+        <td colspan="3"><%= link_to image_tag(dish.ImageURL, size: "200x180"), dish %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% @dishes.each do |dish| %>
+        <td><%= link_to dish.restaurant, dish.restaurantURL %></td>
+        <td><%= dish.dish_name %></td>
+        <td><%= dish.price %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% @dishes.each do |dish| %>
+        <td colspan="3">Stock:   <%=dish.orders.size %>/<%= dish.stock %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
