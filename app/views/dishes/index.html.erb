@@ -1,3 +1,79 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>   
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+
+      <div id="myCarousel-inner" class="carousel-inner">
+
+
+        <div class="item active">
+          <%= link_to image_tag(@dishes.first.imageURL), @dishes.first %>
+          <div class="container">
+            <div class="carousel-caption">
+              
+            <table class="table transbox table-short">
+              <tbody>
+                <tr>
+                    <td><p><%= @dishes.first.name %> @ <%= link_to @dishes.first.restaurant, @dishes.first.restaurantURL, :class=>'a' %></p></td>
+                </tr>
+                <tr>
+                    <td><p><%= @dishes.first.price %> HKD</p></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+              <div class="col-sm-offset-4 col-sm-4">
+                  <p>还剩<%=@dishes.first.stock - @dishes.first.orders.size%>份
+              <%= link_to '就要这个', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %></p>
+              </div>
+            </div> 
+          </div>
+        </div>
+
+        <% @dishes.drop(1).each do |dish| %>
+          <div class="item">
+            <div class="text-center">
+            <%= link_to image_tag(dish.imageURL), dish %>
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+
+              <table class="table transbox table-short">
+                <tbody>
+                  <tr>
+                      <td><p><%= dish.name %> @ <%= link_to dish.restaurant, dish.restaurantURL%></p></td>
+                  </tr>
+                  <tr>
+                      <td><p><%= dish.price %> HKD</p></td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div class="col-sm-offset-4 col-sm-4">
+                  <p>还剩<%=dish.stock - dish.orders.size %>份
+              <%= link_to '就要这个', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %></p>
+              </div>
+             
+
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+
+    </div><!-- /.carousel -->
+<!--
 <h1>Listing dishes</h1>
 <p> Click on the dish you like to order !</p>
 <table>
@@ -21,3 +97,4 @@
     </tr>
   </tbody>
 </table>
+-->
