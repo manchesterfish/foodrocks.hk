@@ -23,9 +23,23 @@ before_action :set_dish, only: [:show, :edit, :update, :destroy]
   def create
     @dish = Dish.new(dish_params)
 
+    respond_to do |format|
+      if @dish.save
+        format.html { redirect_to @dish, notice: 'Dish was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
   def update
+    respond_to do |format|
+      if @dish.update(dish_params)
+        format.html { redirect_to dishes_admin_path, notice: "Dish #{@dish.name} was successfully updated." }    
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy
