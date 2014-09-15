@@ -1,18 +1,41 @@
-<p>
-  <strong>Restaurant:</strong>
-  <%= @dish.restaurant %>
-</p>
 
-<p>
-  <strong>Dish name:</strong>
-  <%= @dish.name %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @dish.price %>
-</p>
+<div id="bg">
+  <%= image_tag(@dish.imageURL, class: "img-blur") %>
+</div>
 
+
+<div class="container order-container">
+
+
+
+
+             <table class="table transbox table-width">
+                <tbody>
+                  <tr>
+                    <td colspan=2><div class="text-center"><h1>订单详情</h1></div></td>
+                  </tr>
+                  <tr>
+                    <td><p>时间</p></td>                    
+                    <td><p>正午 12:00</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>地点</p></td> 
+                    <td><p>开心公园</p></td>
+                  </tr>                  
+                  <tr>
+                    <td><p>菜品</p></td>
+                    <td><p><%= @dish.name %> @ <%= link_to @dish.restaurant, @dish.restaurantURL %></p></td>
+                  </tr>
+                  <tr>
+                    <td><p>价格</p></td> 
+                    <td><p><%= @dish.price %> HKD</p></td>
+                  </tr>
+
+                </tbody>
+             </table>
+
+<br>
 <%= render "dish_orders/form", :locals=>{ :order => @dish.orders.build }%>
+</div>
 
-<%= link_to 'Back to Menu', dishes_path %>

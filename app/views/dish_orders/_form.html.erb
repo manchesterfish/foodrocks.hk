@@ -1,16 +1,73 @@
-<%= form_for([@dish, @dish.orders.build]) do |f| %>
+<%= form_for([@dish, @dish.orders.build], html:{class: "form-horizontal "}) do |f| %>
 
   <div class="field">
     <%= f.hidden_field :dish_id %>
   </div>
 
+
+
   <div class="field form-group">
-    <%= f.label "手机号码"%>
-    <%= f.number_field :phone, :class=>'form-control' %>
+    <%= f.label "手机号码", :class=>'col-sm-5 control-label text-white '%>
+
+    <div class="col-sm-3">
+      <%= f.number_field :phone, :class=>'form-control' %>
+    </div>
   </div>
 
-  <br>
-    <%= f.submit "落单"%>
+
+<div class="actions col-sm-offset-4 col-sm-4">
+<a href="#modal-dialog" class="modal-toggle btn btn-lg btn-danger btn-block" data-toggle="modal"><i class="icon-trash"></i>落单</a>
+</div>
+
+  <div class="actions col-sm-offset-4 col-sm-1">
+    <%= link_to "返回", dishes_path, style: 'color:white;' %>
   </div>
+
+<div id="modal-dialog" class="modal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+            <div class="text-center"><img src="../assets/logoo.jpg"></div>
+
+        </div>
+             <div class="text-center"><h1>确认落单</h1></div>
+
+             <table class="table table-striped">
+                <tbody class="table-comfirmed">
+                  <tr>
+                    <td><p>手机号码</p></td>                    
+                    <td><p>？？？？</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>时间</p></td>                    
+                    <td><p>正午 12:00</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>地点</p></td> 
+                    <td><p>开心公园</p></td>
+                  </tr>                  
+                  <tr>
+                    <td><p>菜品</p></td>
+                    <td><p><%= @dish.name %> @ <%= link_to @dish.restaurant, @dish.restaurantURL %></p></td>
+                  </tr>
+                  <tr>
+                    <td><p>价格</p></td> 
+                    <td><p><%= @dish.price %> HKD</p></td>
+                  </tr>
+
+                </tbody>
+            </table>    
+
+        <div class="modal-footer">
+          <%= f.submit "确认", :class=>'btn btn-lg btn-danger btn-block'%>
+          <a href="#" data-dismiss="modal" aria-hidden="true" class="btn btn-lg btn-default btn-block">返回</a>
+        </div>
+      </div>
+    </div>
+</div>  
+
 
 <% end %>
+
+
