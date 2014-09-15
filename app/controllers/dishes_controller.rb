@@ -1,11 +1,6 @@
 class DishesController < ApplicationController
 before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
-  def admin
-    @dishes = Dish.all
-  end
-
-  # GET /dishes
   def index
     @dishes = Dish.all
   end
@@ -25,7 +20,7 @@ before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
     respond_to do |format|
       if @dish.save
-        format.html { redirect_to dishes_path, notice: 'Dish was successfully created.' }
+        format.html { redirect_to admin_dishes_path, notice: 'Dish was successfully created.' }
       else
         format.html { render :new }
       end
@@ -35,7 +30,7 @@ before_action :set_dish, only: [:show, :edit, :update, :destroy]
   def update
     respond_to do |format|
       if @dish.update(dish_params)
-        format.html { redirect_to dishes_admin_path, notice: "Dish #{@dish.name} was successfully updated." }
+        format.html { redirect_to admin_dishes_path, notice: "Dish #{@dish.name} was successfully updated." }
       else
         format.html { render :edit }
       end
@@ -44,7 +39,9 @@ before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   def destroy
     @dish.destroy
-    redirect_to dishes_admin_path
+    respond_to do |format|
+      format.html { redirect_to admin_dishes_path, notice: 'Dish was successfully destroyed.' }
+    end
   end
 
   private

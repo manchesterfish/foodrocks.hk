@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'dishes#index'
 
-  get 'dishes/admin' => 'dishes#admin'
+  get 'admin/dishes' => 'admin#dishes'
+
+  get 'admin/orders' => 'admin#orders'
   
   resources :dishes do
     resources :orders , :controller => 'dish_orders'

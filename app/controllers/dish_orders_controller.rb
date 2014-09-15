@@ -16,7 +16,7 @@
   def create
     @order = @dish.orders.build(order_params)
 
-    @order.time = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+    @order.time = Time.now.strftime("%Y-%m-%d %H:%M")
 
     respond_to do |format|
         if @order.save
@@ -24,7 +24,7 @@
         else
           format.html { render "errors" , :locals=>{:order=>@order} }
         end
-      end
+    end
   end
 
   def edit
@@ -35,9 +35,9 @@
     @order = @dish.orders.find( params[:id] )
 
     if @order.update_attributes( order_params )
-      redirect_to dish_orders_url( @dish )
+      format.html { redirect_to admin_orders_path, notice: 'Order was successfully updated.' }
     else
-      render :action => :new
+      format.html { redirect_to admin_orders_path, notice: 'Oop! Order is not updated' }
     end
 
   end
@@ -45,14 +45,15 @@
   def destroy
     @order = @dish.orders.find( params[:id] )
     @order.destroy
-
-    redirect_to dish_orders_url( @dish )
+    respond_to do |format|
+      format.html { redirect_to admin_orders_path, notice: 'Order was successfully destroyed.' }
+    end
   end
 
   private
 
     def find_dish
-      @dish = Dish.find( params[:dish_id] )
+      @dish = Dish.find(params[:dish_id] )
     end
 
     def order_params
