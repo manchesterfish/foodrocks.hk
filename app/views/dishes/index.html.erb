@@ -14,7 +14,7 @@
           <%= link_to image_tag(@dishes.first.imageURL), @dishes.first %>
           <div class="container">
             <div class="carousel-caption">
-              
+            <h1 class="soldOut"></h1>
             <table class="table transbox table-short">
               <tbody>
                 <tr>
@@ -28,8 +28,8 @@
             </table>
 
               <div class="col-sm-offset-4 col-sm-4">
-                  <p>还剩<%=@dishes.first.stock - @dishes.first.orders.size%>份
-              <%= link_to '就要这个', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %></p>
+                  <p class="reminingDish">仅剩<%=@dishes.first.stock - @dishes.first.orders.size%>份</p>
+              <%= link_to '就要这个', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
             </div> 
           </div>
@@ -56,8 +56,8 @@
               </table>
 
               <div class="col-sm-offset-4 col-sm-4">
-                  <p>还剩<%=dish.stock - dish.orders.size %>份
-              <%= link_to '就要这个', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %></p>
+                  <p>仅剩<%=dish.stock - dish.orders.size %>份</p>
+              <%= link_to '就要这个', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
              
 
@@ -73,6 +73,11 @@
 
 
     </div><!-- /.carousel -->
+
+    <script>
+      checkSoldOut();
+    </script>
+
 <!--
 <h1>Listing dishes</h1>
 <p> Click on the dish you like to order !</p>
