@@ -1,5 +1,9 @@
 <%= form_for([@dish, @dish.orders.build], html:{class: "form-horizontal ", onsubmit: "return validateForm()"}) do |f| %>
 
+<script>
+orderPageSoldOut(<%=@dish.orders.size%>);
+</script>
+
   <div class="field">
     <%= f.hidden_field :dish_id %>
   </div>

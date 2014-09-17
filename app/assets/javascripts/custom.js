@@ -41,10 +41,19 @@ function checkSoldOut(){
 		y[0].innerHTML="沽清";
 		var btn = document.getElementsByClassName('btn');
 		var img = document.getElementsByTagName('img')	
-		x[0].innerHTML = '售罄'	
+		x[0].innerHTML = ''	
 		btn[0].className += ' disabled';
+		btn[0].innerHTML = '沽清';		
 		img[1].className += ' img-dark'
-
 	};
 
+};
+
+function orderPageSoldOut(number){
+	/*alert(number);*/
+	if(number == -2){
+		var btn = document.getElementsByClassName('btn');
+		btn[0].className += ' disabled';
+		btn[0].innerHTML = '沽清';
+	}
 };
