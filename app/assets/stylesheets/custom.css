@@ -60,6 +60,9 @@
  -webkit-filter: blur(5px) brightness(0.5);
 }
 
+.img-dark{
+ -webkit-filter: brightness(0.3);  
+}
 .transbox {
     background-color: #ffffff;
     opacity: 0.6;
@@ -123,4 +126,38 @@ html,body{height:100%;}
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
 
+.main-container{
+  padding: 40px 0;
+  background: black;
+  height: 100%;
+}
+
+/*feedback form*/
+
+.content {
+background: #00FA9A;
+padding: 20px;
+border-radius: 10px;
+}
+
+.content-h2 {
+background: #f7f7f7;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border-bottom: 1px solid #eee;
+margin: -20px -20px 20px -20px;
+padding: 20px;
+font-size: 18px;
+}
+
+.confirmation-container{
+  padding: 40px 0;
+  background: black;
+  height: 100%;
+}
+
+.confirmation-table{
+  background-image: url(confirmation.jpg);
+  background-repeat:no-repeat;
+}
 

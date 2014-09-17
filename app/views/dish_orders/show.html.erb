@@ -1,7 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+  <div class="confirmation-container">
+    <table class="table confirmation-table">
+    	<tbody>
+            <tr>
+            <td colspan=2><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td>
+            </tr>    		
+            <tr>
+            <td colspan=2><div class="text-center"><h1>谢谢您</h1></div></td>
+            </tr>
+            <tr>
+            <td colspan=2><div class="text-center"><p>如何领取如何领取如何领取如何领取如何领取如何领取</p></div></td>
+            </tr>            
 
+             <tr>
+                <td><p>您的手机</p></td> 
+                <td><p><%= @order.phone %></p></td>
+            </tr>
+            <tr>
+                <td><p>您的订单号</p></td> 
+                <td><p>!@!@#$%^&</p></td>
+            </tr>
+
+            <tr>
+                <td><p>时间</p></td>                    
+                <td><p>正午 12:00</p></td>
+            </tr>
+            <tr>
+                <td><p>地点</p></td> 
+                <td><p>开心公园</p></td>
+            </tr>                  
+            <tr>
+                <td><p>菜品</p></td>
+                <td><p><%= @dish.name %> @ <%=@dish.restaurant%></p></td>
+            </tr>
+            <tr>
+                <td><p>价格</p></td> 
+                <td><p><%= @dish.price %> HKD</p></td>
+            </tr>
+    	</tbody>
+    </table>
+  </div>
+
+
+<!--
+<p>
   <strong>The Dish you ordered is:</strong>
   <%= @order.dish.name %>
 </p>
@@ -10,5 +53,5 @@
   <strong>Your Phone Number (Used to pick up):</strong>
   <%= @order.phone %>
 </p>
-
+-->
 <%= link_to 'Back to Menu', dishes_path %>
