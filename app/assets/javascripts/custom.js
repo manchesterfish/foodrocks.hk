@@ -57,3 +57,15 @@ function orderPageSoldOut(number){
 		btn[0].innerHTML = '沽清';
 	}
 };
+
+$('#navList').hover(
+       function(){ $(this).addClass('active') },
+       function(){ $(this).removeClass('active') }
+)
+
+$(document).ready(function($){
+    $('.navList').hover(
+         function(){ $(this).addClass('active') },
+         function(){ $(this).removeClass('active') }
+    )
+});

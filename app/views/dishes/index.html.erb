@@ -11,7 +11,9 @@
 
 
         <div class="item active">
-          <%= link_to image_tag(@dishes.first.imageURL), @dishes.first %>
+          <div class="text-center">
+            <%= link_to image_tag(@dishes.first.imageURL), @dishes.first %>
+          </div>
           <div class="container">
             <div class="carousel-caption">
             <h1 class="soldOut"></h1>
@@ -104,7 +106,3 @@
 </table>
 <<<<<<< HEAD
 -->
-=======
-
-<td><%= link_to "Add Your Feed Back", new_feedback_path %></td>
->>>>>>> master
