@@ -136,6 +136,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
+  padding-top: 50px;
   margin-bottom: 30px;
 }
 .footer {
@@ -148,8 +149,8 @@ body {
 }
 
 .main-container{
-  padding: 40px 0;
-  background: black;
+  padding: 0px 0;
+  background: white;
   height: 100%;
   width: 100%;
 }
@@ -157,7 +158,7 @@ body {
 /*feedback form*/
 
 .content {
-background: #ffa07a;
+background: #f7f7f7;
 padding: 20px;
 border-radius: 10px;
 }
@@ -168,9 +169,7 @@ border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 border-bottom: 1px solid #eee;
 margin: -20px -20px 20px -20px;
-padding: 20px;
-font-size: 18px;
-}
+padding: 20px;}
 
 /*order confirmation*/
 .confirmation-container{
