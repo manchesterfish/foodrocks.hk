@@ -33,6 +33,7 @@
       <div class="modal-content">
         <div class="modal-header">
             <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+            <div class="text-center"><img src="/logoo.jpg"></div>
             <div class="text-center"><%=image_tag("logoo.jpg")%></div>
 
         </div>
@@ -41,28 +42,28 @@
              <table class="table table-striped">
                 <tbody class="table-comfirmed">
                   <tr>
-                    <td><p>手机号码</p></td>                    
+                    <td><p>手机号码</p></td>
                     <td><p id="usrPhone"></p></td>
                   </tr>
                   <tr>
-                    <td><p>时间</p></td>                    
+                    <td><p>时间</p></td>
                     <td><p>正午 12:00</p></td>
                   </tr>
                   <tr>
-                    <td><p>地点</p></td> 
+                    <td><p>地点</p></td>
                     <td><p>开心公园</p></td>
-                  </tr>                  
+                  </tr>
                   <tr>
                     <td><p>菜品</p></td>
                     <td><p><%= @dish.name %> @ <%= link_to @dish.restaurant, @dish.restaurantURL %></p></td>
                   </tr>
                   <tr>
-                    <td><p>价格</p></td> 
+                    <td><p>价格</p></td>
                     <td><p><%= @dish.price %> HKD</p></td>
                   </tr>
 
                 </tbody>
-            </table>    
+            </table>
 
         <div class="modal-footer">
           <%= f.submit "确认", :class=>'btn btn-lg btn-danger btn-block', :id=>'submitBtn'%>
@@ -70,7 +71,7 @@
         </div>
       </div>
     </div>
-</div>  
+</div>
 
 <script>
 $(document).ready(function() {
@@ -114,5 +115,3 @@ var bootstrapValidator = $('.registrationForm').data('bootstrapValidator');
 //disableBtn(invalidFields);
 </script>
 <% end %>
-
-
