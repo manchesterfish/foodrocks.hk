@@ -6,9 +6,10 @@ function getUsrPhone(){
 function validateForm() {
 	var x = document.getElementById("order_phone");
 	var y = document.getElementById('submitBtn');
-    if (x.value == null || x.value == "") {
-        y.value = document.getElementById('usrPhone').innerHTML="请输入正确的手机号码";
-        //y.value = "请输入正确的手机号码";
+    if (x.value == null || x.value == "" || x.value.length != 8) {
+        //document.getElementById('usrPhone').innerHTML="请输入正确的手机号码";
+	    document.getElementById('usrPhone').innerHTML=x.value;
+        y.value = "请输入正确的手机号码";
         return false;
     }else{
 	    document.getElementById('usrPhone').innerHTML=x.value;
