@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-  <div class="confirmation-container">
-    <table class="table confirmation-table">
-    	<tbody>
+<div class="main-container">
+        <div class="content container col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4 col-sm-offset-2 col-sm-8">
+
+
+
+            <table class="table">
+        <tbody>
             <tr>
-            <td colspan=2><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td>
-            </tr>    		
-            <tr>
-            <td colspan=2><div class="text-center"><h1>谢谢您</h1></div></td>
+            <td colspan=2><div class="text-center"><h2>谢谢您</h2></div></td>
             </tr>
             <tr>
             <td colspan=2><div class="text-center"><p>如何领取如何领取如何领取如何领取如何领取如何领取</p></div></td>
@@ -38,9 +39,12 @@
                 <td><p>价格</p></td> 
                 <td><p><%= @dish.price %> HKD</p></td>
             </tr>
-    	</tbody>
-    </table>
-  </div>
+          </tbody>
+         </table>
+         <%= link_to '我还要吃', dishes_path, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;'%>
+        </div>
+</div>
+
 
 
 <!--
@@ -54,4 +58,4 @@
   <%= @order.phone %>
 </p>
 -->
-<%= link_to 'Back to Menu', dishes_path %>
+

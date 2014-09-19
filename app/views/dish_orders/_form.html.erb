@@ -1,8 +1,6 @@
-<%= form_for([@dish, @dish.orders.build], html:{class: "form-horizontal ", onsubmit: "return validateForm()"}) do |f| %>
+<%= form_for([@dish, @dish.orders.build], html:{class: "form-horizontal registrationForm"}) do |f| %>
 
-<script>
-orderPageSoldOut(<%=@dish.orders.size%>);
-</script>
+
 
   <div class="field">
     <%= f.hidden_field :dish_id %>
@@ -14,16 +12,15 @@ orderPageSoldOut(<%=@dish.orders.size%>);
     <!--<%= f.label "手机号码", :class=>'col-sm-5 control-label text-white'%>-->
 
     <div class="col-sm-offset-4 col-sm-4">
-      <%= f.number_field :phone, :class=>'form-control' , :placeholder=>'您的手机号码'%>
+      <%= f.number_field :phone, :class=>'form-control', :placeholder=>'您的手机号码'%>
     </div>
   </div>
 
 
-<div class="actions col-sm-offset-4 col-sm-4">
-<a href="#modal-dialog" class="modal-toggle btn btn-lg btn-danger btn-block" data-toggle="modal"onclick="return getUsrPhone()"><i class="icon-trash"></i>落单</a>
+<div class="actions col-sm-offset-4 col-sm-4" onmouseover="return enableBtn()">
+<a href="#modal-dialog" class="modal-toggle btn btn-lg btn-danger btn-block" data-toggle="modal" id="modalbtn" onclick="return validateForm()"><i class="icon-trash"></i>落单</a>
 </div>
 
-<!-- onclick="return validateForm()" -->
 
 
 
@@ -68,14 +65,54 @@ orderPageSoldOut(<%=@dish.orders.size%>);
             </table>    
 
         <div class="modal-footer">
-          <%= f.submit "确认", :class=>'btn btn-lg btn-danger btn-block'%>
+          <%= f.submit "确认", :class=>'btn btn-lg btn-danger btn-block', :id=>'submitBtn'%>
           <a href="#" data-dismiss="modal" aria-hidden="true" class="btn btn-lg btn-default btn-block">返回</a>
         </div>
       </div>
     </div>
 </div>  
 
+<script>
+$(document).ready(function() {
+    $('.registrationForm').bootstrapValidator({
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            'order[phone]': {
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: '请输入手机号码'
+                    },
+                    stringLength: {
+                        min: 8,
+                        max: 8,
+                        message: '请输入正确的手机号码'
+                    },
+                    regexp: {
+                        regexp: /^[0-9]+$/,
+                        message: '请输入正确的手机号码'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
 
+<script>
+orderPageSoldOut(<%=@dish.stock - @dish.orders.size%>);
+
+// Get plugin instance
+var bootstrapValidator = $('.registrationForm').data('bootstrapValidator');
+// and then call method
+//var invalidFields = bootstrapValidator.getInvalidFields();
+//disableBtn(invalidFields);
+</script>
 <% end %>
 
 
