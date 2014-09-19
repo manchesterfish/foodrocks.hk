@@ -20,7 +20,7 @@ before_action :set_feedback, only: [:show, :edit, :update, :destroy]
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to feedback_path(@feedback), notice: 'Feedback was successfully created.' }
+        format.html { redirect_to page_path('feedback_msg'), notice: 'Feedback was successfully created.' }
       else
         format.html { render :new }
       end
