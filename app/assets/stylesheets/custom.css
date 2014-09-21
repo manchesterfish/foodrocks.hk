@@ -1,3 +1,7 @@
+/*html,body{height:100%;}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}*/
+
 #bg {
   position: fixed; 
   top: -50%; 
@@ -117,9 +121,8 @@ label{
   font-size: 24px;
 }
 
-/*html,body{height:100%;}
-.carousel,.item,.active{height:100%;}
-.carousel-inner{height:100%;}*/
+
+
 
 /*navbar*/
 ul.nav a:hover { color: black !important; }
@@ -146,6 +149,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 30px;
   background-color: white;
+  z-index: 11;
 }
 
 .main-container{

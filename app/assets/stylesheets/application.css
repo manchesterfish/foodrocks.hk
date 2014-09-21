@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require bootstrap.min
-  *= require bootstrapValidator.min
- *= require_tree .
+ *= require bootstrapValidator.min
+
  *= require_self
  */
 @font-face {
@@ -22,3 +22,198 @@
        url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
        url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+/*html,body{height:100%;}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}*/
+
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 100%;
+  background-color: black;
+}
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  size:100%;
+  height: 100%;
+}
+
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  }
+
+.carousel-control{
+  background-color: black;
+}
+
+
+
+
+
+/*place order page*/
+.img-blur{
+ -webkit-filter: blur(5px) brightness(0.5);
+}
+
+.img-dark{
+ -webkit-filter: brightness(0.3);  
+}
+.transbox {
+    background-color: #ffffff;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.transbox p {
+    margin: 10px 40px;
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+.text-white {
+	color: white;
+}
+
+label{
+	font-size: 24px;
+}
+
+.large-font-size{
+	margin: 10px 0px;
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+}
+
+.text-align-left{
+	text-align: left;
+}
+
+
+.table-width{ 
+  width:45%;
+  margin: 0 auto;
+}
+
+.order-container{
+  position: absolute;  
+  bottom: 20px;
+  width: 100%;
+}
+
+.table-short{
+  /*width: 60%;*/
+  margin: 0 auto;  
+}
+
+.table-comfirmed{
+  text-align: center;
+
+}
+.table-comfirmed p{
+  font-size: 24px;
+}
+
+
+
+
+/*navbar*/
+ul.nav a:hover { color: black !important; }
+
+.navbar-brand {
+    padding: 0 15px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: white;
+  z-index: 11;
+}
+
+.main-container{
+  padding: 0px 0;
+  background: white;
+  height: 100%;
+  width: 100%;
+}
+
+/*feedback form*/
+
+.content {
+background: #f7f7f7;
+padding: 20px;
+border-radius: 10px;
+}
+
+.content-h2 {
+background: #f7f7f7;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border-bottom: 1px solid #eee;
+margin: -20px -20px 20px -20px;
+padding: 20px;}
+
+/*order confirmation*/
+.confirmation-container{
+  padding: 40px 0;
+  background: black;
+  height: 100%;
+}
+
+.confirmation-table{
+  background-image: url(confirmation.jpg);
+  background-repeat:no-repeat;
+}
+
+.comfirm-logo{
+  width: 100%;
+}
+
+

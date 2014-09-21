@@ -43,15 +43,19 @@ function checkSoldOut(){
 	var x = document.getElementsByClassName('reminingDish');
 	var y = document.getElementsByClassName('soldOut');
 
-	if (x[0].innerHTML == '仅剩0份') {
-		y[0].innerHTML="沽清";
-		var btn = document.getElementsByClassName('btn');
-		var img = document.getElementsByTagName('img')	
-		x[0].innerHTML = ''	
-		btn[0].className += ' disabled';
-		btn[0].innerHTML = '沽清';		
-		img[1].className += ' img-dark'
-	};
+	var i;
+	for (i = 0; i < x.length; i++) {
+		if (x[i].innerHTML == '仅剩0份') {
+			//y[i].innerHTML="暂无供应";
+			var btn = document.getElementsByClassName('btn');
+			var img = document.getElementsByTagName('img')	
+			x[i].innerHTML = ''	
+			btn[i].className += ' disabled';
+			btn[i].innerHTML = '暂无供应 明天再抢';		
+			img[i+1].className += ' img-dark';
+		}
+	}
+
 
 };
 
@@ -60,7 +64,7 @@ function orderPageSoldOut(number){
 	if(number == -2){
 		var btn = document.getElementsByClassName('btn');
 		btn[0].className += ' disabled';
-		btn[0].innerHTML = '沽清';
+		btn[0].innerHTML = '暂无供应 明天再抢';
 	}
 };
 
