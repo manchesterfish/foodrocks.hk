@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -35,12 +35,45 @@
     <div class="footer">
       <div class="container">
         <div class="text-center">
-          <p class="text-muted">© 2014 foodrocks.hk <a href="#">免责声明</a></p>
+          <p class="text-muted">© 2014 foodrocks.hk - <a href="#modal-dialog" class="modal-toggle" data-toggle="modal" id="modalbtn"><i class="icon-trash"></i>服务条款</a></p>
         </div>
       </div>
     </div>
 
 <%= yield %>
 
+<div id="modal-dialog" class="modal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+            <h1>服务条款</h1>
+
+        </div>
+        <div>
+        <p>欢迎使用您使用FoodRocks！</P><p>
+        感谢您使用我们的产品和服务（下称“服务”）。FoodRocks是一个提供线上下单外卖的平台。
+        您使用我们的服务即表示您已同意本条款。您的使用行为将被视为对本声明全部内容的认可。请仔细阅读。</P><p>
+        如跟近附加条款，则将会与相关服务一同提供，并且在您使用这些服务后，成为您与我们所达成的协议的一部分。</P><p>
+        FoodRocks尊重并保护所有使用用户的个人隐私权，您注册的用户名、电子邮件地址等个人资料，非经您亲自许可或根据相关法律、法规的强制性规定，本网站不会主动地泄露给第三方。但若由不可抗力造成信息泄露，本网站不对此负责。</P><p>
+        任何通过使用本FoodRocks而搜索链接到的第三方网页(如openrice等)均系他人制作或提供，不代表FoodRocks赞成被搜索链接到的第三方网页上的内容或立场,您也可能从该第三方网页上获得资讯及享用服务，FoodRocks对其合法性概不负责，亦不承担任何法律责任。</P><p>
+        FoodRocks所刊载的文章资料、图片、图表仅供参考使用。本站所刊载的内容，并不代表同意其说法或描述，仅为提供更多信息，也不构成任何投资建议。</P><p>
+        当FoodRocks以链接形式推荐其他网站内容时，由于本站并不控制相关网站和资源，因此访问者需理解并同意，本站并不对这些网站或资源的可用性负责，且不保证从这些网站获取的任何内容、产品、服务或其他材料的真实性、合法性，对于任何因使用或信赖从此类网站或资源上获取的内容、产品、服务或其他材料而造成（或声称造成）的任何直接或间接损失，本站均不承担任何责任。</P><p>
+        FoodRocks平台上餐品均为卖家餐厅自行制作买卖, FoodRocks不对任何餐品本身负责。</P><p>
+        FoodRocks为运营初期，FoodRocks团队不对卖家餐厅做出的任何不当行为负责。
+        </P>
+      </div>
+
+
+
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" aria-hidden="true" class="btn btn-lg btn-danger btn-block">返回</a>
+        </div>
+      </div>
+    </div>
+</div>
+
 </body>
 </html>
+
+
