@@ -1,0 +1,14 @@
+/* line 5, /Users/apple/foodrocks.hk/app/assets/stylesheets/dishes.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 6, /Users/apple/foodrocks.hk/app/assets/stylesheets/dishes.css.scss */
+.carousel, .item, .active {
+  height: 100%;
+}
+
+/* line 7, /Users/apple/foodrocks.hk/app/assets/stylesheets/dishes.css.scss */
+.carousel-inner {
+  height: 100%;
+}
