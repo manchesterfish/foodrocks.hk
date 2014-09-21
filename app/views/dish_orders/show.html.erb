@@ -1,36 +1,41 @@
-<p id="notice"><%= notice %></p>
-
+<br>
 <div class="main-container">
-        <div class="content container col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4 col-sm-offset-2 col-sm-8">
+        <div class="content container col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 col-sm-offset-2 col-sm-8">
 
 
 
-            <table class="table">
+        <table class="table text-center">
         <tbody>
             <tr>
-            <td colspan=2><div class="text-center"><h2>谢谢您</h2></div></td>
+            <td colspan=2>
+                <div class="text-center">
+                <%= image_tag("logo.png")%></td></div>
+            </tr>
+
+            <tr>
+            <td colspan=2><h2>谢谢您</h2></td>
             </tr>
             <tr>
-            <td colspan=2><div class="text-center"><p>如何领取如何领取如何领取如何领取如何领取如何领取</p></div></td>
+            <td colspan=2><p>如何领取如何领取如何领取如何领取如何领取如何领取</p></td>
             </tr>            
-
+            <tr class="info">
+                <td><h3>您的订单号</h3></td> 
+                <td><h3 style="color:red;">!@!@#$%^&</h></td>
+            </tr>
+            <tr>
+                <td><p>日期</p></td> 
+                <td><p>!@!@#$%^&</p></td>
+            </tr>
              <tr>
                 <td><p>您的手机</p></td> 
                 <td><p><%= @order.phone %></p></td>
             </tr>
-            <tr>
-                <td><p>您的订单号</p></td> 
-                <td><p>!@!@#$%^&</p></td>
-            </tr>
+
 
             <tr>
-                <td><p>时间</p></td>                    
-                <td><p>正午 12:00</p></td>
-            </tr>
-            <tr>
-                <td><p>地点</p></td> 
-                <td><p>开心公园</p></td>
-            </tr>                  
+                <td><p>时间地点</p></td>                    
+                <td><p>正午 12:00 @ 开心公园</p></td>
+            </tr>             
             <tr>
                 <td><p>菜品</p></td>
                 <td><p><%= @dish.name %> @ <%=@dish.restaurant%></p></td>
@@ -39,9 +44,12 @@
                 <td><p>价格</p></td> 
                 <td><p><%= @dish.price %> HKD</p></td>
             </tr>
+            <tr>
+            <td colspan=2><%= link_to '我还要吃', dishes_path, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;'%></td>
+            </tr>        
+
           </tbody>
          </table>
-         <%= link_to '我还要吃', dishes_path, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;'%>
         </div>
 </div>
 

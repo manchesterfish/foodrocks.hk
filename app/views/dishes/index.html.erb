@@ -13,7 +13,7 @@
 
         <div class="item active">
           <div class="text-center">
-            <%= link_to image_tag(@dishes.first.imageURL), @dishes.first %>
+            <%= image_tag(@dishes.first.imageURL)%>
           </div>
           <div class="container">
             <div class="carousel-caption">
@@ -42,7 +42,7 @@
         <% @dishes.drop(1).each do |dish| %>
           <div class="item">
             <div class="text-center">
-            <%= link_to image_tag(dish.imageURL), dish %>
+            <%= image_tag(dish.imageURL)%>
             </div>
             <div class="container">
               <div class="carousel-caption">
@@ -59,7 +59,7 @@
                 </tbody>
               </table>
 
-                  <p>仅剩<%=dish.stock - dish.orders.size %>份</p>
+                  <p class="reminingDish">仅剩<%=dish.stock - dish.orders.size %>份</p>
               <%= link_to '就要这个', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
              
