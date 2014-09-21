@@ -16,7 +16,7 @@
   def create
     @order = @dish.orders.build(order_params)
 
-    @order.time = Time.now.strftime("%Y-%m-%d %H:%M")
+    @order.time = Time.now.strftime("%m月%d日")
 
     respond_to do |format|
         if @order.save
