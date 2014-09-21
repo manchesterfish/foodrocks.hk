@@ -9,7 +9,7 @@
 <body>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -20,17 +20,17 @@
 
           <%= link_to image_tag("logoo.jpg", size: "200x50"), dishes_path, class: "navbar-brand"%>
 
-
-          <ul class="nav navbar-nav">
-           <li class="navList"><%= link_to '今日菜品', dishes_path %></li>
-           <li class="navList"><%= link_to '订餐流程', page_path('flow') %></li>
-           <li class="navList"><td><%= link_to "反馈", new_feedback_path %></td></li>
-          </ul>
-
         </div>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="navList"><%= link_to '今日菜品', dishes_path %></li>
+             <li class="navList"><%= link_to '订餐流程', '/flow.html' %></li>
+             <li class="navList"><td><%= link_to "反馈", new_feedback_path %></td></li>
+            </ul>
+        </div>
       </div>
     </div>
+
     <div class="footer">
       <div class="container">
         <div class="text-center">
