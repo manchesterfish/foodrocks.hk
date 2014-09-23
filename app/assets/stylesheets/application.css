@@ -122,12 +122,9 @@ label{
 }
 
 
-<<<<<<< HEAD
-.table-width{ 
-=======
+
 .table-width{
-  width:45%;
->>>>>>> master
+  /*width:45%;*/
   margin: 0 auto;
 }
 
@@ -169,6 +166,7 @@ html {
 body {
   /* Margin bottom by footer height */
   padding-top: 50px;
+  margin-bottom: 30px;
 }
 .footer {
 
