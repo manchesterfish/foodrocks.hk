@@ -1,28 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing orders</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Dish</th>
-      <th>Phone num</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+<div class="col-md-5">
 
-  <tbody>
-    <% @orders.each do |order| %>
+<h1>Listing orders</h1>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= order.time %></td>
-        <td><%= order.dish.name %></td>
-        <td><%= order.phone %></td>
-        <td><%= link_to 'Destroy', dish_order_path(order.dish, order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>日期</th>
+        <th>菜品</th>
+        <th>电话号码</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'Check the Dishes', admin_dishes_path %> <br>
-<%= link_to 'Check the Feedbacks', admin_feedbacks_path %> <br>
-<%= link_to 'Goto Menu Page', dishes_path %>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.time %></td>
+          <td><%= order.dish.name %></td>
+          <td><%= order.phone %></td>
+          <td><%= link_to 'Destroy', dish_order_path(order.dish, order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div></div>
+
+<div class="container">
+<div class="col-md-10">
+  <br>
+  <%= link_to 'Check the Dishes', admin_dishes_path %> <br>
+  <%= link_to 'Check the Feedbacks', admin_feedbacks_path %> <br>
+  <%= link_to 'Goto Menu Page', dishes_path %>
+</div></div>

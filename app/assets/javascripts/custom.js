@@ -51,7 +51,7 @@ function checkSoldOut(){
 			var img = document.getElementsByTagName('img')	
 			x[i].innerHTML = ''	
 			btn[i].className += ' disabled';
-			btn[i].innerHTML = '暂无供应 明天再抢';		
+			btn[i].innerHTML = '暂无供应TwT明天再抢';		
 			img[i+1].className += ' img-dark';
 		}
 	}
@@ -64,7 +64,7 @@ function orderPageSoldOut(number){
 	if(number == -2){
 		var btn = document.getElementsByClassName('btn');
 		btn[0].className += ' disabled';
-		btn[0].innerHTML = '暂无供应 明天再抢';
+		btn[0].innerHTML = '暂无供应TwT明天再抢';
 	}
 };
 

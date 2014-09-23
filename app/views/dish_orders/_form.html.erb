@@ -9,16 +9,15 @@
 
 
   <div class="field form-group">
-    <!--<%= f.label "手机号码", :class=>'col-sm-5 control-label text-white'%>-->
 
-    <div class="col-sm-offset-4 col-sm-4">
+    <div class="col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 col-sm-offset-4 col-sm-4 col-xs-offset-2 col-xs-8">
       <br>
       <%= f.number_field :phone, :class=>'form-control', :placeholder=>'您的手机号码'%>
     </div>
   </div>
 
 
-<div class="actions col-sm-offset-4 col-sm-4" onmouseover="return enableBtn()">
+<div class="actions col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
 <a href="#modal-dialog" class="modal-toggle btn btn-lg btn-danger btn-block" data-toggle="modal" id="modalbtn" onclick="return validateForm()"><i class="icon-trash"></i>落单</a>
 </div>
 
@@ -34,7 +33,7 @@
       <div class="modal-content">
         <div class="modal-header">
             <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
-            <div class="text-center"><%=image_tag("logoo.jpg")%></div>
+            <div class="text-center"><%=image_tag("logoo.jpg", :class=>"logoModal")%></div>
 
         </div>
              <div class="text-center"><h1>确认落单</h1></div>

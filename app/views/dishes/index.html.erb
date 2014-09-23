@@ -5,6 +5,7 @@
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>   
         <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
 
       <div id="myCarousel-inner" class="carousel-inner">
@@ -12,19 +13,19 @@
 
         <div class="item active">
           <div class="text-center">
-            <%= image_tag(@dishes.first.imageURL)%>
+            <%= image_tag(@dishes.first.imageURL, :class=>'responsiveImg')%>
           </div>
           <div class="container">
             <div class="carousel-caption">
             <h1 class="soldOut"></h1>
             <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-sm-offset-2 col-sm-8">
-            <table class="table transbox table-short">
+            <table class="table transbox table-short text-center">
               <tbody>
                 <tr>
-                    <td><p><%= @dishes.first.name %> @ <%= link_to @dishes.first.restaurant, @dishes.first.restaurantURL, :class=>'a' %></p></td>
+                    <td><h3><%= @dishes.first.name %> @ <%= link_to @dishes.first.restaurant, @dishes.first.restaurantURL %></h3></td>
                 </tr>
                 <tr>
-                    <td><p><%= @dishes.first.price %> HKD</p></td>
+                    <td><h3><%= @dishes.first.price %> HKD</h3></td>
                 </tr>
 
               </tbody>
@@ -32,7 +33,7 @@
 
 
                 <p class="reminingDish">仅剩<%=@dishes.first.stock - @dishes.first.orders.size%>份</p>
-              <%= link_to '就要这个', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
+              <%= link_to '就要这个=w=', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
             </div> 
           </div>
@@ -41,7 +42,7 @@
         <% @dishes.drop(1).each do |dish| %>
           <div class="item">
             <div class="text-center">
-            <%= image_tag(dish.imageURL)%>
+            <%= image_tag(dish.imageURL, :class=>'responsiveImg')%>
             </div>
             <div class="container">
               <div class="carousel-caption">
@@ -49,17 +50,17 @@
               <table class="table transbox table-short">
                 <tbody>
                   <tr>
-                      <td><p><%= dish.name %> @ <%= link_to dish.restaurant, dish.restaurantURL%></p></td>
+                      <td><h3><%= dish.name %> @ <%= link_to dish.restaurant, dish.restaurantURL%></h3></td>
                   </tr>
                   <tr>
-                      <td><p><%= dish.price %> HKD</p></td>
+                      <td><h3><%= dish.price %> HKD</h3></td>
                   </tr>
 
                 </tbody>
               </table>
 
                   <p class="reminingDish">仅剩<%=dish.stock - dish.orders.size %>份</p>
-              <%= link_to '就要这个', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
+              <%= link_to '就要这个=w=', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
              
 

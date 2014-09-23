@@ -12,18 +12,25 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
+        <div class="col-md-offset-1 col-md-4 content">
+          <h2 class="content-h2">意见反馈</h2>
+          <%= render 'form' %>
+       </div>
         <div class="col-md-offset-2 col-md-4">
           <h2>联系我们</h2>
           <hr />
-          <p>官方微信号：foodrocks</p>
           <p>官方邮箱：<a href="mailto:foodrocks.hk@gmail.com?Subject=问题反馈" target="_top">
-foodrocks.hk@gmail.com</a></p>          
-          <p>手机号：12345678</p>
+          foodrocks.hk@gmail.com</a></p>
+          <p>官方微信号：foodrocks</p>
+          <p>扫描二维码关注foodrock官方微信获取每日菜品信息</p>
+          <%= image_tag('qrcode_wechat.jpg', :class => 'img-thumbnail')%>
+
         </div>
-        <div class="col-md-4 content">
-		  <h2 class="content-h2">意见反馈</h2>
-          <%= render 'form' %>
-       </div>
+
       </div>
     </div>
 </div>
+
+
+
+
