@@ -51,7 +51,7 @@ function checkSoldOut(){
 			var img = document.getElementsByTagName('img')	
 			x[i].innerHTML = ''	
 			btn[i].className += ' disabled';
-			btn[i].innerHTML = '暂无供应 明天再抢';		
+			btn[i].innerHTML = '暂无供应TwT明天再抢';		
 			img[i+1].className += ' img-dark';
 		}
 	}
@@ -64,7 +64,7 @@ function orderPageSoldOut(number){
 	if(number == -2){
 		var btn = document.getElementsByClassName('btn');
 		btn[0].className += ' disabled';
-		btn[0].innerHTML = '暂无供应 明天再抢';
+		btn[0].innerHTML = '暂无供应TwT明天再抢';
 	}
 };
 
@@ -79,16 +79,29 @@ $(document).ready(function($){
          function(){ $(this).removeClass('active') }
     )
 });
-/*
-function enableBtn(){
-	if (true) {
-		var btn = document.getElementById('modalbtn');
-		//function(){ $(btn).removeClass('disabled') };
-        btn.className.replace(/\bdisabled\b/,'');
-        //alert("!");
-	};
-};*/
 
+
+function checkTimeToStart() {
+	var currentTime = new Date().getTime();
+	var startTime = new Date("September 24, 2014 09:00:00");
+	var startTimeS = startTime.getTime();
+
+	var x = document.getElementsByClassName('reminingDish');
+	
+	if (currentTime<startTimeS) 
+	{
+		var i;
+		for (i = 0; i < x.length; i++) {
+			var btn = document.getElementsByClassName('btn');
+			var img = document.getElementsByTagName('img')	
+			x[i].innerHTML = ''	
+			btn[i].className += ' disabled';
+			btn[i].innerHTML = '每天九点准时开抢';
+		}
+	}else{
+		
+	}
+}
 
 
 
