@@ -6231,24 +6231,33 @@ button.close {
 
  */
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+       url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 /*html,body{height:100%;}
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}*/
 
 #bg {
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
   height: 200%;
 }
 #bg img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   min-width: 50%;
   min-height: 50%;
 }
@@ -6293,7 +6302,7 @@ button.close {
 }
 
 .img-dark{
- -webkit-filter: brightness(0.3);  
+ -webkit-filter: brightness(0.3);
 }
 .transbox {
     background-color: #ffffff;
@@ -6330,20 +6339,21 @@ label{
 }
 
 
-.table-width{ 
-  width:45%;
+
+.table-width{
+  /*width:45%;*/
   margin: 0 auto;
 }
 
 .order-container{
-  position: absolute;  
+  position: absolute;
   bottom: 20px;
   width: 100%;
 }
 
 .table-short{
   /*width: 60%;*/
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
 .table-comfirmed{
@@ -6376,14 +6386,16 @@ body {
   margin-bottom: 30px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
+
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 30px;
+  height: 50px;
   background-color: white;
   z-index: 11;
+  vertical-align:middle;
 }
+
+
 
 .main-container{
   padding: 0px 0;
@@ -6424,9 +6436,7 @@ padding: 20px;}
   width: 100%;
 }
 
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-
