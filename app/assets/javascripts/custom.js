@@ -79,16 +79,29 @@ $(document).ready(function($){
          function(){ $(this).removeClass('active') }
     )
 });
-/*
-function enableBtn(){
-	if (true) {
-		var btn = document.getElementById('modalbtn');
-		//function(){ $(btn).removeClass('disabled') };
-        btn.className.replace(/\bdisabled\b/,'');
-        //alert("!");
-	};
-};*/
 
+
+function checkTimeToStart() {
+	var currentTime = new Date().getTime();
+	var startTime = new Date("September 24, 2014 09:00:00");
+	var startTimeS = startTime.getTime();
+
+	var x = document.getElementsByClassName('reminingDish');
+	
+	if (currentTime<startTimeS) 
+	{
+		var i;
+		for (i = 0; i < x.length; i++) {
+			var btn = document.getElementsByClassName('btn');
+			var img = document.getElementsByTagName('img')	
+			x[i].innerHTML = ''	
+			btn[i].className += ' disabled';
+			btn[i].innerHTML = '每天九点准时开抢';
+		}
+	}else{
+		
+	}
+}
 
 
 
