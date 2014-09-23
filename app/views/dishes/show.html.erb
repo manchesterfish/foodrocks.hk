@@ -4,40 +4,58 @@
   <%= image_tag(@dish.imageURL, class: "img-blur") %>
 </div>
 
-
-
 <div class="container order-container">
-
-
-
 <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-sm-offset-2 col-sm-8">
-             <table class="table transbox table-width">
+             <table class="table transbox table-width text-center">
                 <tbody>
                   <tr>
                     <td colspan=2><div class="text-center"><h1>订单详情</h1></div></td>
                   </tr>
                   <tr>
-                    <td><p>取餐时间</p></td>                    
-                    <td><p>正午 12:00-12:05</p></td>
+                    <td><h3>取餐时间</h3></td>                    
+                    <td><h3>正午 12:00-12:05</h3></td>
                   </tr>
                   <tr>
-                    <td><p>取餐地点</p></td> 
-                    <td><p>开心公园</p></td>
+                    <td><h3>取餐地点</h3></td> 
+                    <td><h3>开心公园<small><a href="#modal-map" class="modal-toggle" data-toggle="modal" id="modalmapbtn"><i class="icon-trash"></i> (地图)</a></small></h3></td>
                   </tr>                  
                   <tr>
-                    <td><p>菜品</p></td>
-                    <td><p><%= @dish.name %> @ <%= link_to @dish.restaurant, @dish.restaurantURL %></p></td>
+                    <td><h3>菜品</h3></td>
+                    <td><h3><%= @dish.name %> @ <%= link_to @dish.restaurant, @dish.restaurantURL %></h3></td>
                   </tr>
                   <tr>
-                    <td><p>价格</p></td> 
-                    <td><p><%= @dish.price %> HKD</p></td>
+                    <td><h3>价格</h3></td> 
+                    <td><h3><%= @dish.price %> HKD</h3></td>
                   </tr>
-
                 </tbody>
              </table>
+             <br>
 </div>
 
-<br>
-<%= render "dish_orders/form", :locals=>{ :order => @dish.orders.build }%>
 </div>
+<%= render "dish_orders/form", :locals=>{ :order => @dish.orders.build }%>
+
+<div id="modal-map" class="modal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+            <h1>取餐地点</h1>
+
+        </div>
+        <div class="modal-body text-center">
+            <%= image_tag('flow_images/领取地点.jpg', :class => 'img-thumbnail')%>
+
+            <%= image_tag('flow_images/领取地点2.jpg', :class => 'img-thumbnail')%>
+        </div>
+
+
+
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" aria-hidden="true" class="btn btn-lg btn-danger btn-block">返回</a>
+        </div>
+      </div>
+    </div>
+</div>
+
 
