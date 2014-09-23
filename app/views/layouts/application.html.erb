@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag params[:controller] %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
@@ -32,15 +33,17 @@
       </div>
     </div>
 
+
+
+<%= yield %>
     <div class="footer">
       <div class="container">
         <div class="text-center">
+          <p><br></p>
           <p class="text-muted">© 2014 foodrocks.hk - <a href="#modal-dialog" class="modal-toggle" data-toggle="modal" id="modalbtn"><i class="icon-trash"></i>服务条款</a></p>
         </div>
       </div>
     </div>
-
-<%= yield %>
 
 <div id="modal-dialog" class="modal">
   <div class="modal-dialog">
@@ -50,7 +53,7 @@
             <h1>服务条款</h1>
 
         </div>
-        <div>
+        <div class="modal-body">
         <p>欢迎使用您使用FoodRocks！</P><p>
         感谢您使用我们的产品和服务（下称“服务”）。FoodRocks是一个提供线上下单外卖的平台。
         您使用我们的服务即表示您已同意本条款。您的使用行为将被视为对本声明全部内容的认可。请仔细阅读。</P><p>
