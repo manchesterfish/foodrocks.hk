@@ -27,10 +27,6 @@
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}*/
 
-@media (max-width: @screen-xs) {
-    body{font-size: 10px;}
-}
-
 #bg {
   position: fixed;
   left: -50%;
