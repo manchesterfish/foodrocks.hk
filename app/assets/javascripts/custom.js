@@ -83,7 +83,7 @@ $(document).ready(function($){
 
 function checkTimeToStart() {
 	var currentTime = new Date().getTime();
-	var startTime = new Date("September 24, 2014 09:00:00");
+	var startTime = new Date("September 25, 2014 09:00:00");
 	var startTimeS = startTime.getTime();
 
 	var x = document.getElementsByClassName('reminingDish');
