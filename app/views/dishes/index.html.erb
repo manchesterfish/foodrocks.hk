@@ -1,3 +1,6 @@
+
+
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 
@@ -23,18 +26,43 @@
             <table class="table transbox table-short text-center">
               <tbody>
                 <tr>
-                    <td><h3><%= @dishes.first.name %> @ <%= link_to @dishes.first.restaurant, @dishes.first.restaurantURL %></h3></td>
+                    <td colspan="3"><h3><%= @dishes.first.name %> @ <%= link_to @dishes.first.restaurant, @dishes.first.restaurantURL %></h3></td>
                 </tr>
                 <tr>
-                    <td><h3><%= @dishes.first.price %> HKD</h3></td>
+                    <td colspan="3"><h3><%= @dishes.first.price %> HKD</h3></td>
                 </tr>
-
+                <!--
+                <tr class="text-center">
+                    <td>
+                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div></td>
+                    <td>
+                      <wb:like type="number"></wb:like>
+                    </td>
+                    <td>
+                      <script type="text/javascript" charset="utf-8">
+                      (function(){
+                      var p = [], w=130, h=24,
+                      lk = {
+                      url:''||location.href, /*喜欢的URL(不含如分页等无关参数)*/
+                      title:''||document.title, /*喜欢标题(可选)*/
+                      description:'', /*喜欢简介(可选)*/
+                      image:'' /*喜欢相关图片的路径(可选)*/
+                      };
+                      for(var i in lk){
+                      p.push(i + '=' + encodeURIComponent(lk[i]||''));
+                      }
+                      document.write('<iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://www.connect.renren.com/like/v2?'+p.join('&')+'" style="width:'+w+'px;height:'+h+'px;"></iframe>');
+                      })();
+                      </script>
+                    </td>                    
+                </tr>-->
               </tbody>
             </table>
+            
 
 
                 <p class="reminingDish">仅剩<%=@dishes.first.stock - @dishes.first.orders.size%>份</p>
-              <%= link_to '就要这个=w=', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
+              <%= link_to '就要这个', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
             </div> 
           </div>
@@ -61,7 +89,7 @@
               </table>
 
                   <p class="reminingDish">仅剩<%=dish.stock - dish.orders.size %>份</p>
-              <%= link_to '就要这个=w=', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
+              <%= link_to '就要这个', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
              
 

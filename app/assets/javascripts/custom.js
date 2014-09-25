@@ -48,15 +48,17 @@ function checkSoldOut(){
 		if (x[i].innerHTML == '仅剩0份') {
 			//y[i].innerHTML="暂无供应";
 			var btn = document.getElementsByClassName('btn');
-			var img = document.getElementsByTagName('img')	
-			x[i].innerHTML = ''	
+			var img = document.getElementsByTagName('img');	
+			x[i].innerHTML = ''	;
 			btn[i].className += ' disabled';
-			btn[i].innerHTML = '暂无供应TwT明天再抢';		
+			btn[i].innerHTML = '卖完啦！ 明天再抢';		
 			img[i+1].className += ' img-dark';
+		} else if (x[i].innerHTML == '仅剩1份' || x[i].innerHTML == '仅剩2份' || x[i].innerHTML == '仅剩3份'){
+
+		} else {
+			x[i].innerHTML = ''	;
 		}
 	}
-
-
 };
 
 function orderPageSoldOut(number){
@@ -64,7 +66,7 @@ function orderPageSoldOut(number){
 	if(number == -2){
 		var btn = document.getElementsByClassName('btn');
 		btn[0].className += ' disabled';
-		btn[0].innerHTML = '暂无供应TwT明天再抢';
+		btn[0].innerHTML = '卖完啦！ 明天再抢';
 	}
 };
 
@@ -83,7 +85,7 @@ $(document).ready(function($){
 
 function checkTimeToStart() {
 	var currentTime = new Date().getTime();
-	var startTime = new Date("September 25, 2014 09:00:00");
+	var startTime = new Date("September 26, 2014 09:00:00");
 	var startTimeS = startTime.getTime();
 
 	var x = document.getElementsByClassName('reminingDish');
