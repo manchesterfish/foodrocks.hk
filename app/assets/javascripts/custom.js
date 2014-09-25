@@ -66,7 +66,7 @@ function orderPageSoldOut(number){
 	if(number == -2){
 		var btn = document.getElementsByClassName('btn');
 		btn[0].className += ' disabled';
-		btn[0].innerHTML = '暂无供应TwT明天再抢';
+		btn[0].innerHTML = '卖完啦！ 明天再抢';
 	}
 };
 
@@ -85,7 +85,7 @@ $(document).ready(function($){
 
 function checkTimeToStart() {
 	var currentTime = new Date().getTime();
-	var startTime = new Date("September 25, 2014 09:00:00");
+	var startTime = new Date("September 26, 2014 09:00:00");
 	var startTimeS = startTime.getTime();
 
 	var x = document.getElementsByClassName('reminingDish');
