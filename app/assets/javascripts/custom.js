@@ -1,4 +1,4 @@
-function getUsrPhone(){	
+function getUsrPhone(){
 	var x = document.getElementById('order_phone');
 	document.getElementById('usrPhone').innerHTML=x.value;
 };
@@ -48,10 +48,10 @@ function checkSoldOut(){
 		if (x[i].innerHTML == '仅剩0份') {
 			//y[i].innerHTML="暂无供应";
 			var btn = document.getElementsByClassName('btn');
-			var img = document.getElementsByTagName('img');	
+			var img = document.getElementsByTagName('img');
 			x[i].innerHTML = ''	;
 			btn[i].className += ' disabled';
-			btn[i].innerHTML = '卖完啦！ 明天再抢';		
+			btn[i].innerHTML = '卖完啦！ 明天再抢';
 			img[i+1].className += ' img-dark';
 		} else if (x[i].innerHTML == '仅剩1份' || x[i].innerHTML == '仅剩2份' || x[i].innerHTML == '仅剩3份'){
 
@@ -85,25 +85,22 @@ $(document).ready(function($){
 
 function checkTimeToStart() {
 	var currentTime = new Date().getTime();
-	var startTime = new Date("September 26, 2014 09:00:00");
+	var startTime = new Date("September 29, 2014 09:00:00");
 	var startTimeS = startTime.getTime();
 
 	var x = document.getElementsByClassName('reminingDish');
-	
-	if (currentTime<startTimeS) 
+
+	if (currentTime<startTimeS)
 	{
 		var i;
 		for (i = 0; i < x.length; i++) {
 			var btn = document.getElementsByClassName('btn');
-			var img = document.getElementsByTagName('img')	
-			x[i].innerHTML = ''	
+			var img = document.getElementsByTagName('img')
+			x[i].innerHTML = ''
 			btn[i].className += ' disabled';
 			btn[i].innerHTML = '每天九点准时开抢';
 		}
 	}else{
-		
+
 	}
 }
-
-
-
