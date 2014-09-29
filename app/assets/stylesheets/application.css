@@ -67,7 +67,7 @@
 
 .responsiveImg{
   max-width: 100%;
-  height: auto; 
+  height: auto;
   min-height: 250px;
 }
 /*
@@ -232,4 +232,3 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-appearance: none;
   margin: 0;
 }
-

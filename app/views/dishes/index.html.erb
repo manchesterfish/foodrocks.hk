@@ -6,10 +6,9 @@
 
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>   
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
 
       <div id="myCarousel-inner" class="carousel-inner">
@@ -54,17 +53,17 @@
                       document.write('<iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://www.connect.renren.com/like/v2?'+p.join('&')+'" style="width:'+w+'px;height:'+h+'px;"></iframe>');
                       })();
                       </script>
-                    </td>                    
+                    </td>
                 </tr>-->
               </tbody>
             </table>
-            
+
 
 
                 <p class="reminingDish">仅剩<%=@dishes.first.stock - @dishes.first.orders.size%>份</p>
               <%= link_to '就要这个', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
-            </div> 
+            </div>
           </div>
         </div>
 
@@ -91,7 +90,7 @@
                   <p class="reminingDish">仅剩<%=dish.stock - dish.orders.size %>份</p>
               <%= link_to '就要这个', dish, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
               </div>
-             
+
 
               </div>
             </div>
@@ -99,7 +98,7 @@
         <% end %>
 
       </div>
-    
+
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 
