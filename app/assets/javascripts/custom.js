@@ -85,7 +85,7 @@ $(document).ready(function($){
 
 function checkTimeToStart() {
 	var currentTime = new Date().getTime();
-	var startTime = new Date("September 30, 2014 09:00:00");
+	var startTime = new Date("October 30, 2014 09:00:00");
 	var startTimeS = startTime.getTime();
 
 	var x = document.getElementsByClassName('reminingDish');
@@ -98,7 +98,7 @@ function checkTimeToStart() {
 			var img = document.getElementsByTagName('img')
 			x[i].innerHTML = ''
 			btn[i].className += ' disabled';
-			btn[i].innerHTML = '每天九点准时开抢';
+			btn[i].innerHTML = '国庆之后 美味继续';
 		}
 	}else{
 
