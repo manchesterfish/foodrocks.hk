@@ -10,11 +10,6 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
-        <li data-target="#myCarousel" data-slide-to="6"></li>
-        <li data-target="#myCarousel" data-slide-to="7"></li>
-        <li data-target="#myCarousel" data-slide-to="8"></li>
       </ol>
 
       <div id="myCarousel-inner" class="carousel-inner">
@@ -28,7 +23,7 @@
             <div class="carousel-caption">
             <h1 class="soldOut"></h1>
             <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 col-sm-offset-2 col-sm-8">
-            <!--
+            
             <table class="table transbox table-short text-center">
               <tbody>
                 <tr>
@@ -44,7 +39,7 @@
 
                 <p class="reminingDish">仅剩<%=@dishes.first.stock - @dishes.first.orders.size%>份</p>
               <%= link_to '就要这个', @dishes.first, class: "btn btn-lg btn-danger btn-block", role: "button", style: 'color:white;' %>
-            -->
+            
               </div>
             </div>
           </div>
